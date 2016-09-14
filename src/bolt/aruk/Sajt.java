@@ -1,16 +1,13 @@
 package bolt.aruk;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Sajt extends Elelmiszer {
 
 	protected double suly;
-	protected double zsirtartalom;
-	protected Long vonalKod;
-	protected String gyarto;
-	protected Date szavatossagiIdo;
+	protected boolean zsirtartalom;
 
-	public Sajt(Long vonalKod, double suly, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
+	public Sajt(Long vonalKod, double suly, String gyarto, Calendar szavatossagiIdo, boolean zsirtartalom) {
 		super(vonalKod, gyarto, szavatossagiIdo);
 		this.suly = suly;
 		this.zsirtartalom = zsirtartalom;
@@ -24,7 +21,7 @@ public class Sajt extends Elelmiszer {
 		return suly;
 	}
 
-	public double getZsirtartalom() {
+	public boolean getZsirtartalom() {
 		return zsirtartalom;
 	}
 
@@ -36,7 +33,7 @@ public class Sajt extends Elelmiszer {
 		return gyarto;
 	}
 
-	public Date getSzavatossagiIdo() {
+	public Calendar getSzavatossagiIdo() {
 		return szavatossagiIdo;
 	}
 

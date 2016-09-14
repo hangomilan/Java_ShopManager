@@ -5,53 +5,53 @@ import bolt.aruk.Sajt;
 import bolt.aruk.Szappan;
 import bolt.aruk.tej.TartosTej;
 import bolt.aruk.tej.FeltartosTej;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public abstract class BoltFactory {
 
-	public static Tej ujTarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo,
+	public static Tej ujTarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo,
 			double zsirtartalom) {
 		return new TartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, zsirtartalom);
 	}
 
-	public static Tej ujFeltarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo,
+	public static Tej ujFeltarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo,
 			double zsirtartalom) {
 		return new TartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, zsirtartalom);
 	}
 
-	public static Tej ujFelzsirosTarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujFelzsirosTarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, Tej.FELZSIROS);
 	}
 
-	public static Tej ujZsirosTarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujZsirosTarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, Tej.ZSIROS);
 	}
 
-	public static Tej ujFelzsirosFeltarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujFelzsirosFeltarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new FeltartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, Tej.FELZSIROS);
 	}
 	
-	public static Tej ujZsirosFeltarosTej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujZsirosFeltarosTej(Long vonalKod, int urtartalom, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, urtartalom, gyarto, szavatossagiIdo, Tej.ZSIROS);
 	}
 
-	public static Tej ujFelzsirosLiteresTarosTej(Long vonalKod, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujFelzsirosLiteresTarosTej(Long vonalKod, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, Tej.LITER, gyarto, szavatossagiIdo, Tej.FELZSIROS);
 	}
 	
-	public static Tej ujZsirosLiteresTarosTej(Long vonalKod, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujZsirosLiteresTarosTej(Long vonalKod, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, Tej.LITER, gyarto, szavatossagiIdo, Tej.ZSIROS);
 	}
 	
-	public static Tej ujFelzsirosLiteresFeltarosTej(Long vonalKod, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujFelzsirosLiteresFeltarosTej(Long vonalKod, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, Tej.LITER, gyarto, szavatossagiIdo, Tej.FELZSIROS);
 	}
 	
-	public static Tej ujZsirosLiteresFeltarosTej(Long vonalKod, String gyarto, Date szavatossagiIdo) {
+	public static Tej ujZsirosLiteresFeltarosTej(Long vonalKod, String gyarto, GregorianCalendar szavatossagiIdo) {
 		return new TartosTej(vonalKod, Tej.LITER, gyarto, szavatossagiIdo, Tej.FELZSIROS);
 	}
 	
-	public static Sajt ujSajt(Long vonalKod, double suly, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
+	public static Sajt ujSajt(Long vonalKod, double suly, String gyarto, GregorianCalendar szavatossagiIdo, boolean zsirtartalom) {
 		return new Sajt(vonalKod, suly, gyarto, szavatossagiIdo,zsirtartalom);
 	}
 	

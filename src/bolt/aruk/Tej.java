@@ -1,6 +1,7 @@
 package bolt.aruk;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public abstract class Tej extends Elelmiszer {
 
@@ -11,12 +12,9 @@ public abstract class Tej extends Elelmiszer {
 	public static final double FELZSIROS = 1.5;
 
 	protected int urtartalom = 0;
-	protected String gyarto;
-	protected Date szavatossagiIdo;
 	protected double zsirtartalom;
-	protected long vonalKod;
 
-	public Tej(Long vonalKod, int urtartalom, String gyarto, Date szavatossagiIdo, double zsirtartalom) {
+	public Tej(Long vonalKod, int urtartalom, String gyarto, Calendar szavatossagiIdo, double zsirtartalom) {
 		super(vonalKod, gyarto, szavatossagiIdo);
 		this.urtartalom = urtartalom;
 		this.zsirtartalom = zsirtartalom;
@@ -27,7 +25,16 @@ public abstract class Tej extends Elelmiszer {
 	}
 
 	public boolean joMeg() {
-		return szavatossagiIdo.before(new Date());
+		Calendar most = new GregorianCalendar();
+		int hasonlitas = this.szavatossagiIdo.compareTo(most);
+		if (!(hasonlitas == -1)) 
+		{
+			return true;
+		} 
+		else 
+		{ 
+			return false;
+		}
 	}
 
 	public int getUrtartalom() {
@@ -38,7 +45,7 @@ public abstract class Tej extends Elelmiszer {
 		return gyarto;
 	}
 
-	public Date getSzavatossagiIdo() {
+	public Calendar getSzavatossagiIdo() {
 		return szavatossagiIdo;
 	}
 
