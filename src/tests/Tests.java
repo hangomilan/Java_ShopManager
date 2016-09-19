@@ -4,10 +4,12 @@ import static org.junit.Assert.*;
 
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
+import java.util.Vector;
 
 import org.junit.Test;
 
 import bolt.Bolt;
+import bolt.PlazaImpl;
 import bolt.aruk.Sajt;
 import bolt.aruk.Szappan;
 import bolt.aruk.Tej;
@@ -62,5 +64,16 @@ public class Tests {
 		assertNotNull("Letrejött az uj bolt.", ujBolt);
 	}
 	
-	
+	@Test
+	public void plazaisNyitvaTrue()
+	{
+		Hashtable<Long, Integer> aruk = new Hashtable<>();
+		Bolt ujBolt = new Bolt("Uj bolt", "Uj tulaj", "Uj cim", aruk, 1);
+		Vector<Object> boltok = new Vector<>();
+		PlazaImpl plaza = new PlazaImpl(boltok);
+		plaza.hozzaadShop(ujBolt);
+		plaza.nyit();
+		assertTrue("A pláza nyitva", plaza.isNyitva());
+
+	}
 }
